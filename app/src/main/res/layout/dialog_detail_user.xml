@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/linear_detail_dialog"
+    android:layout_gravity="center_vertical"
+    android:background="car"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        android:elevation="16dp"
+        android:layout_margin="1dp"
+        android:id="@+id/cardview_dialog">
+        <RelativeLayout
+            android:background="@drawable/cus_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <TextView
+                android:id="@+id/tv_phone_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cus_phone_dialog"
+                android:padding="5dp"
+                android:text="PHONE"
+                android:textColor="#FFFF00"
+                android:textSize="11sp" />
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="200dp"-->
+<!--                android:layout_marginTop="33dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:gravity="left"-->
+<!--                android:padding="10dp"-->
+<!--                android:textSize="17sp" />-->
+
+            <TextView
+                android:id="@+id/tv_name_dialog"
+                android:layout_width="99dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="33dp"
+                android:layout_marginEnd="0dp"
+                android:background="@drawable/cus_name"
+                android:ellipsize="marquee"
+                android:gravity="left"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text="NAME"
+                android:textSize="17sp" />
+
+
+            <TextView
+                android:id="@+id/tv_dsc_dialog"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name_dialog"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="170dp"
+                android:layout_marginTop="-1dp"
+                android:layout_marginBottom="1dp"
+                android:padding="4dp"
+                android:text="DESCRIPTION"
+                android:textSize="13sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_row_dialog"
+                android:layout_width="119dp"
+                android:layout_height="119dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/meme_0"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="1dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
