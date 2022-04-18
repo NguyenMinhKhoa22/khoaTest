@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     android:id="@+id/linear_detail_dialog"
     android:layout_gravity="center_vertical"
-    android:background="car"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
