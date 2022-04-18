@@ -37,9 +37,30 @@ public class MainActivity extends AppCompatActivity {
         InfoArrayList.add(new InfoUser("NGUYEN VĂN A", "having or displaying warmth or fondness","11123456789",R.drawable.meme9));
         InfoArrayList.add(new InfoUser("HÀ MINH HE", "having a strong desire for success or achievement","669123456789",R.drawable.meme10));
 
-        InfoUserAdapter infoUserAdapter = new InfoUserAdapter(InfoArrayList, getApplicationContext());
+        InfoUserAdapter infoUserAdapter = new InfoUserAdapter(InfoArrayList, getApplicationContext(), new InfoUserAdapter.InfoUserListener() {
+            @Override
+            public void onClickItem(InfoUser infoUser) {
+                callList_2();
+            }
+        });
         recyclerView.setAdapter(infoUserAdapter);
+    }
 
+    public void callList_2() {
+        RecyclerView recyclerView = findViewById(R.id.rv2);
+        recyclerView.setHasFixedSize(true);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(10, LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        ArrayList<Test> testArrayList = new ArrayList<>();
+
+        testArrayList.add(new Test("Khoa 1", R.drawable.meme_0));
+        testArrayList.add(new Test("Khoa 2", R.drawable.meme_1));
+        testArrayList.add(new Test("Khoa 3", R.drawable.meme2));
+        testArrayList.add(new Test("Khoa 4", R.drawable.meme7));
+        testArrayList.add(new Test("Khoa 5", R.drawable.meme8));
+
+        TestAdapter testAdapter = new TestAdapter(getApplicationContext(), testArrayList);
+        recyclerView.setAdapter(testAdapter);
 
     }
 }

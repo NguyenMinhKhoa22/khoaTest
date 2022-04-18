@@ -21,11 +21,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class InfoUserAdapter extends RecyclerView.Adapter<InfoUserAdapter.ViewHolder>{
     Context context;
     ArrayList<InfoUser> infoUsers;
+    private InfoUserListener listener;
+
+    interface InfoUserListener{
+        void onClickItem(InfoUser infoUser);
+    }
 
 
-    public InfoUserAdapter(ArrayList<InfoUser> infoUsers, Context context) {
+    public InfoUserAdapter(ArrayList<InfoUser> infoUsers, Context context, InfoUserListener listener) {
         this.infoUsers = infoUsers;
         this.context = context;
+        this.listener = listener;
     }
 
     @NonNull
@@ -51,32 +57,32 @@ public class InfoUserAdapter extends RecyclerView.Adapter<InfoUserAdapter.ViewHo
         holder.Img_row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(v.getRootView().getContext());
-                View dialogview = LayoutInflater.from(v.getRootView().getContext()).inflate(R.layout.dialog_detail_user, null);
-
-                dialogview.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-                de.hdodenhof.circleimageview.CircleImageView dialog_img;
-                TextView dialog_name;
-                TextView dialog_dsc;
-                TextView dialog_phone;
-
-                dialog_img   = dialogview.findViewById(R.id.img_row_dialog);
-                dialog_name  = dialogview.findViewById(R.id.tv_name_dialog);
-                dialog_name.setSelected(true);
-                dialog_dsc   = dialogview.findViewById(R.id.tv_dsc_dialog);
-                dialog_phone = dialogview.findViewById(R.id.tv_phone_dialog);
-
-                dialog_img.setImageResource(infoUsers.get(position).getRowImg());
-                dialog_name.setText(infoUsers.get(position).getRowName());
-                dialog_dsc.setText(infoUsers.get(position).getRowDsc());
-                dialog_phone.setText(infoUsers.get(position).getRowPhone());
-                builder.setView(dialogview);
-
-                builder.setCancelable(true);
-                builder.show();
-
-
+//                AlertDialog.Builder builder = new AlertDialog.Builder(v.getRootView().getContext());
+//                View dialogview = LayoutInflater.from(v.getRootView().getContext()).inflate(R.layout.dialog_detail_user, null);
+//
+//                dialogview.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//
+//                de.hdodenhof.circleimageview.CircleImageView dialog_img;
+//                TextView dialog_name;
+//                TextView dialog_dsc;
+//                TextView dialog_phone;
+//
+//                dialog_img   = dialogview.findViewById(R.id.img_row_dialog);
+//                dialog_name  = dialogview.findViewById(R.id.tv_name_dialog);
+//                dialog_name.setSelected(true);
+//                dialog_dsc   = dialogview.findViewById(R.id.tv_dsc_dialog);
+//                dialog_phone = dialogview.findViewById(R.id.tv_phone_dialog);
+//
+//                dialog_img.setImageResource(infoUsers.get(position).getRowImg());
+//                dialog_name.setText(infoUsers.get(position).getRowName());
+//                dialog_dsc.setText(infoUsers.get(position).getRowDsc());
+//                dialog_phone.setText(infoUsers.get(position).getRowPhone());
+//                builder.setView(dialogview);
+//
+//                builder.setCancelable(true);
+//                builder.show();
+                InfoUser infoUser = infoUsers.get(position);
+                listener.onClickItem(infoUser);
             }
         });
 

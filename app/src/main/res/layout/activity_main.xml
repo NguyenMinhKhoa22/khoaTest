@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="20dp"
+    android:orientation="vertical"
     tools:context=".MainActivity">
     <androidx.cardview.widget.CardView
         android:backgroundTint="#9FB6CD"
@@ -23,4 +24,10 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv2"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" />
 </LinearLayout>

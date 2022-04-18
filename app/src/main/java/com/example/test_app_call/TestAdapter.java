@@ -52,8 +52,8 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder>{
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_title_2 = itemView.findViewById(R.id.imageView_Img_row_2);
-            iv_image_2 = itemView.findViewById(R.id.textView_title_row_2);
+            tv_title_2 = itemView.findViewById(R.id.textView_title_row_2);
+            iv_image_2 = itemView.findViewById(R.id.imageView_Img_row_2);
         }
     }
 }
